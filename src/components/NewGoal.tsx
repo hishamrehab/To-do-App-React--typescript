@@ -17,21 +17,23 @@ export default function NewGoal({ onAddGoal }: NewGoalProps) {
 
     event.currentTarget.reset();
     onAddGoal(enteredGoal, enteredSummary);
-
-    if (goal.current?.value === "" && summary.current?.value === "") {
-      return;
-    }
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <p>
         <label htmlFor="goal">Your goal</label>
-        <input id="goal" type="text" name="goal" ref={goal} />
+        <input
+          id="goal"
+          type="text"
+          name="goal"
+          ref={goal}
+          required
+        />
       </p>
       <p>
         <label htmlFor="summary">Short summary</label>
-        <input id="summary" type="text" ref={summary} />
+        <input id="summary" type="text" ref={summary} required />
       </p>
       <p>
         <button>Add Goal</button>
