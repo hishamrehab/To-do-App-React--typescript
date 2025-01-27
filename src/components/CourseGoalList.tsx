@@ -1,7 +1,8 @@
+import { type ReactNode } from "react";
 import CourseGoal from "./CourseGoal";
 import { type CourseGoal as CGoal } from "../App.tsx";
 import InfoBox from "./InfoBox.tsx";
-import { ReactNode } from "react";
+
 type CourseGoalListProps = {
   goals: CGoal[];
   onDeleteGoal: (id: number) => void;
@@ -24,7 +25,7 @@ export default function CourseGoalList({
 
   if (goals.length >= 4) {
     warningBox = (
-      <InfoBox mode="warning">
+      <InfoBox mode="warning" severity="medium">
         You're collecting a lot of goals. Don't put too much on your
         plate!
       </InfoBox>
